@@ -9,6 +9,37 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+ /* --- 🔥 Project Card Glass Hover Upgrade --- */
+.project-card{
+ background:rgba(255,255,255,0.12);
+ backdrop-filter:blur(10px);
+ border:1px solid rgba(255,255,255,0.25);
+ border-radius:15px;
+ padding:22px;
+ transition:.5s ease;
+ transform:perspective(800px) translateZ(0);
+}
+.dark-mode .project-card{
+ background:rgba(50,50,70,0.25);
+ border:1px solid rgba(255,255,255,0.15);
+}
+
+.project-card:hover{
+ transform:perspective(800px) translateZ(12px) scale(1.05);
+ box-shadow:0 0 25px var(--primary);
+}
+
+/* --- 🌙 Theme Toggle Animation --- */
+.theme-toggle{
+ transition:.4s;
+}
+.theme-toggle i{
+ transition:.4s transform;
+}
+.theme-toggle:hover i{
+ transform:rotate(200deg) scale(1.2);
+}
+
 /* Scroll Reveal */
 .reveal{opacity:0;transform:translateY(40px);transition:.9s;}
 .reveal.active{opacity:1;transform:translateY(0);}
@@ -19,14 +50,14 @@ html{scroll-behavior:smooth;}
 .dark-mode{--bg:#0d1117;--text:#e6e6e6;--card:#161b22;--primary:#8b7bff;}
 body{margin:0;font-family:"Poppins",sans-serif;background:var(--bg);color:var(--text);transition:.4s;}
 
-/* ───────────── Dropdown Menu Button ───────────── */
+/* ▼ Dropdown Menu Button */
 .menu-btn{
  position:fixed;top:15px;left:15px;z-index:999;
  background:var(--primary);color:white;border:none;
  padding:10px 14px;border-radius:8px;font-size:18px;cursor:pointer;
 }
 
-/* Dropdown Menu Panel */
+/* ▼ Dropdown Menu */
 .dropdown{
  position:fixed;top:60px;left:15px;width:200px;z-index:999;
  background:rgba(0,0,0,.85);backdrop-filter:blur(8px);
@@ -38,7 +69,7 @@ body{margin:0;font-family:"Poppins",sans-serif;background:var(--bg);color:var(--
 }
 .dropdown a:hover{background:var(--primary);}
 
-/* Theme Toggle */
+/* Toggle button */
 .theme-toggle{
  position:fixed;right:20px;top:14px;padding:10px;border:none;
  background:var(--primary);color:#fff;cursor:pointer;
@@ -59,13 +90,13 @@ body{margin:0;font-family:"Poppins",sans-serif;background:var(--bg);color:var(--
 .container{max-width:950px;margin:auto;padding:30px;}
 h2{border-left:5px solid var(--primary);padding-left:10px;margin-top:55px;font-size:1.7rem;}
 
-/* Cards & Tables */
+/* Tables & Cards */
 ul,table{
  background:var(--card);padding:20px;border-radius:12px;margin-top:15px;
  box-shadow:0 4px 20px rgba(0,0,0,.1);
 }
 table{width:100%;border-collapse:collapse;}
-th,td{padding:12px;} th{background:var(--primary);color:white;}
+td,th{padding:12px;} th{background:var(--primary);color:white;}
 tr:nth-child(even){background:#e7e7ff15;}
 
 /* Project Cards */
@@ -87,13 +118,15 @@ tr:nth-child(even){background:#e7e7ff15;}
  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
  background:rgba(0,0,0,.85);justify-content:center;align-items:center;z-index:2000;
 }
-#popup img{width:60%;border-radius:10px;} #popup span{
- position:absolute;top:40px;right:60px;font-size:35px;color:#fff;cursor:pointer;}
+#popup img{width:60%;border-radius:10px;}
+#popup span{
+ position:absolute;top:40px;right:60px;font-size:35px;color:#fff;cursor:pointer;
+}
 
 /* Badges */
 .badge{background:var(--primary);color:white;padding:4px 10px;border-radius:6px;margin:4px;display:inline-block;}
 
-/* Button */
+/* Back to Top */
 .button{padding:12px 25px;background:var(--primary);color:white;border-radius:8px;text-decoration:none;display:inline-block;margin-top:20px;}
 .button:hover{transform:scale(1.05);}
 </style>
@@ -101,10 +134,9 @@ tr:nth-child(even){background:#e7e7ff15;}
 
 <body>
 
-<!-- ▼ Dropdown Menu Trigger -->
+<!-- MENU -->
 <button class="menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
 
-<!-- ▼ Dropdown Menu -->
 <div id="menuList" class="dropdown">
  <a href="#home">Home</a>
  <a href="#education">Education</a>
@@ -112,7 +144,6 @@ tr:nth-child(even){background:#e7e7ff15;}
  <a href="#skills">Skills</a>
  <a href="#responsibility">POR</a>
  <a href="#achievements">Achievements</a>
- <a href="#certificates">Certificates</a>
  <a href="#extra">Extra-Curricular</a>
  <a href="#contact">Contact</a>
 </div>
@@ -141,13 +172,6 @@ tr:nth-child(even){background:#e7e7ff15;}
 <!-- PROJECTS -->
 <h2 id="projects" class="reveal">🛠 Projects</h2>
 <div class="projects-grid reveal">
- <div class="project-card"><h3><i class="fa-solid fa-database"></i> SAP BW Automation</h3><p>BW/4HANA flow automation.</p></div>
- <a href="https://zaynvk.github.io/tindog/" target="_blank" style="text-decoration:none;color:inherit;">
-<div class="project-card">
-  <h3><i class="fa-solid fa-paw"></i> TinDog Website</h3>
-  <p>Responsiv<!-- PROJECTS -->
-<h2 id="projects" class="reveal">🛠 Projects</h2>
-<div class="projects-grid reveal">
 
  <div class="project-card">
    <h3><i class="fa-solid fa-database"></i> SAP BW Automation</h3>
@@ -155,35 +179,36 @@ tr:nth-child(even){background:#e7e7ff15;}
  </div>
 
  <a href="https://zaynvk.github.io/tindog/" target="_blank" style="text-decoration:none;color:inherit;">
-   <div class="project-card">
-     <h3><i class="fa-solid fa-paw"></i> TinDog Website</h3>
-     <p>Responsive landing site for dogs.</p>
-   </div>
- </a>
+ <div class="project-card">
+   <h3><i class="fa-solid fa-paw"></i> TinDog Website</h3>
+   <p>Responsive landing site for dogs.</p>
+ </div></a>
 
- <a href="https://github.com/ZaynVK/Voice-Assistant-With-Keyword-spotting"
-    target="_blank" style="text-decoration:none;color:inherit;">
-   <div class="project-card">
-     <h3><i class="fa-solid fa-microphone"></i> AI Voice Assistant</h3>
-     <p>Voice automation using Python.</p>
-   </div>
- </a>
+ <a href="https://github.com/ZaynVK/Voice-Assistant-With-Keyword-spotting" target="_blank" style="text-decoration:none;color:inherit;">
+ <div class="project-card">
+   <h3><i class="fa-solid fa-microphone"></i> AI Voice Assistant</h3>
+   <p>Voice automation using Python.</p>
+ </div></a>
 
 </div>
 
 <!-- SKILLS -->
 <h2 id="skills" class="reveal">💡 Technical Skills</h2>
 <div class="reveal">
-<b>Languages:</b><br><span class="badge">C/C++</span><span class="badge">Python</span><span class="badge">HTML</span>
+<b>Languages:</b><br>
+<span class="badge">C/C++</span><span class="badge">Python</span><span class="badge">HTML</span>
 <span class="badge">CSS</span><span class="badge">JavaScript</span><span class="badge">SQL</span><br><br>
 
-<b>Tools:</b><br><span class="badge">VS Code</span><span class="badge">GitHub</span><span class="badge">Google Colab</span>
+<b>Tools:</b><br>
+<span class="badge">VS Code</span><span class="badge">GitHub</span><span class="badge">Google Colab</span>
 <span class="badge">NumPy</span><span class="badge">Pandas</span><span class="badge">TensorFlow</span><br><br>
 
-<b>Coursework:</b><br><span class="badge">DSA</span><span class="badge">OS</span><span class="badge">DBMS</span>
+<b>Coursework:</b><br>
+<span class="badge">DSA</span><span class="badge">OS</span><span class="badge">DBMS</span>
 <span class="badge">CN</span><span class="badge">COA</span><span class="badge">TOC</span><br><br>
 
-<b>Interests:</b><br><span class="badge">AI/ML</span><span class="badge">Android</span>
+<b>Interests:</b><br>
+<span class="badge">AI/ML</span><span class="badge">Android</span>
 <span class="badge">Full-Stack</span><span class="badge">Software Dev</span>
 </div>
 
@@ -191,7 +216,7 @@ tr:nth-child(even){background:#e7e7ff15;}
 <h2 id="responsibility" class="reveal">🏅 Positions of Responsibility</h2>
 <ul class="reveal">
 <li>NCC Corporal (2016–2019)</li>
-<li>Event Organiser – Techzite Fest 2020</li>
+<li>Organiser – Techzite Fest 2020</li>
 </ul>
 
 <!-- ACHIEVEMENTS -->
@@ -199,8 +224,8 @@ tr:nth-child(even){background:#e7e7ff15;}
 <ul class="reveal">
 <li>NCC “C” Certificate Holder</li>
 <li>2nd Prize – National Quiz (IICHE 2019)</li>
-<li>Qualified GATE CSE (2024 & 2025)</li>
-<li>Qualified GATE DA (2025)</li>
+<li>GATE CSE Qualified (2024 & 2025)</li>
+<li>GATE DA Qualified (2025)</li>
 </ul>
 
 <!-- EXTRA -->
@@ -209,17 +234,8 @@ tr:nth-child(even){background:#e7e7ff15;}
 <li>Polling Watcher – Elections 2019</li>
 <li>2 NCC CATC Camps</li>
 <li>1st Prize – PT Event</li>
-<li>Mandal Topper – 10th</li>
+<li>Mandal Topper – Class 10</li>
 </ul>
-
-
-</div>
-
-<!-- POPUP -->
-<div id="popup" onclick="closePopup()">
-<span>&times;</span>
-<img id="popup-img">
-</div>
 
 <!-- CONTACT -->
 <h2 id="contact" class="reveal">📞 Contact</h2>
@@ -233,35 +249,35 @@ tr:nth-child(even){background:#e7e7ff15;}
 <a href="#home" class="button">⬆ Back to Top</a>
 </div>
 
-<!-- JavaScript -->
+<!-- Script -->
 <script>
 function toggleTheme(){
-  document.body.classList.toggle("dark-mode");
-  
-  const icon = document.querySelector(".theme-toggle i");
-  
-  if(document.body.classList.contains("dark-mode")){
-      icon.classList.remove("fa-moon");
-      icon.classList.add("fa-sun");
-  }else{
-      icon.classList.remove("fa-sun");
-      icon.classList.add("fa-moon");
-  }
+ document.body.classList.toggle("dark-mode");
+ 
+ const icon=document.querySelector(".theme-toggle i");
+
+ icon.style.transform="scale(0) rotate(180deg)";
+
+ setTimeout(()=>{
+   if(document.body.classList.contains("dark-mode")){
+       icon.classList.replace("fa-moon","fa-sun");
+   }else{
+       icon.classList.replace("fa-sun","fa-moon");
+   }
+   icon.style.transform="scale(1) rotate(0deg)";
+ },200);
 }
 
-
-/* Dropdown toggle */
 function toggleMenu(){
- document.getElementById("menuList").style.display =
+ document.getElementById("menuList").style.display=
  document.getElementById("menuList").style.display=="block"?"none":"block";
 }
-
-/* Certificates popup */
-function openPopup(src){document.getElementById("popup-img").src=src;
- document.getElementById("popup").style.display="flex";}
+function openPopup(src){
+ document.getElementById("popup-img").src=src;
+ document.getElementById("popup").style.display="flex";
+}
 function closePopup(){document.getElementById("popup").style.display="none";}
 
-/* Scroll reveal activation */
 const observer=new IntersectionObserver(entries=>{
  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("active");observer.unobserve(e.target);}});}
 ,{threshold:.2});
@@ -270,6 +286,3 @@ document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
-
-
-
