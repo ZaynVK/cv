@@ -10,6 +10,19 @@
 
 <style>
 /*-------------- Theme Colors --------------*/
+  /* Scroll reveal animation base */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .9s ease;
+}
+
+/* When visible on screen */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 html{scroll-behavior:smooth;}
 :root{
   --bg:#f5f7fa;
@@ -297,8 +310,21 @@ const observer=new IntersectionObserver(entries=>{
  });
 },{threshold:.2});
 elements.forEach(el=>observer.observe(el));
+  const elements = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target); // reveals only once
+    }
+  })
+},{threshold:0.2}); // 20% visible triggers
+
+elements.forEach(el=>observer.observe(el));
 </script>
 
 </body>
 </html>
+
 
