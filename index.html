@@ -3,945 +3,337 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bhargav Battula | Portfolio</title>
-  <meta name="description" content="Portfolio of Bhargav Battula, M.Tech CSE student at NIT Goa and former Infosys Systems Engineer.">
+  <title>Bhargav Battula</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
-    :root {
-      --bg: #f5efe3;
-      --bg-soft: #efe4d0;
-      --ink: #161616;
-      --muted: #5f5a52;
-      --panel: rgba(255, 251, 244, 0.72);
-      --panel-strong: rgba(255, 250, 242, 0.92);
-      --line: rgba(22, 22, 22, 0.12);
-      --accent: #d06b2f;
-      --accent-2: #174a45;
-      --accent-3: #8d2f2f;
-      --shadow: 0 24px 70px rgba(55, 36, 17, 0.14);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Manrope", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(208, 107, 47, 0.16), transparent 24%),
-        radial-gradient(circle at top right, rgba(23, 74, 69, 0.14), transparent 22%),
-        linear-gradient(180deg, #f8f3ea 0%, var(--bg) 45%, #efe2cf 100%);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: linear-gradient(rgba(22, 22, 22, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(22, 22, 22, 0.04) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 85%);
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .container { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      padding: 16px 0;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(180deg, rgba(245, 239, 227, 0.94), rgba(245, 239, 227, 0.55) 70%, transparent);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 250, 242, 0.72);
-      box-shadow: var(--shadow);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      color: #fff6ef;
-      font-family: "Syne", sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.05em;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent), var(--accent-3));
-      box-shadow: 0 16px 36px rgba(141, 47, 47, 0.2);
-      flex: 0 0 auto;
-    }
-
-    .brand-copy strong,
-    .hero h1,
-    .section-title,
-    .eyebrow,
-    .stat-value,
-    .timeline-year,
-    .cta,
-    .project-card h3,
-    .contact-card h3,
-    .footer-name {
-      font-family: "Syne", sans-serif;
-    }
-
-    .brand-copy strong {
-      display: block;
-      font-size: 0.95rem;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-copy span {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    .nav-links,
-    .nav-actions,
-    .hero-actions,
-    .hero-tags,
-    .stats,
-    .project-tags,
-    .contact-actions,
-    .footer-links,
-    .timeline-tags { display: flex; flex-wrap: wrap; gap: 12px; }
-
-    .nav-links a,
-    .ghost,
-    .menu-toggle {
-      padding: 11px 15px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: var(--muted);
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .ghost:hover,
-    .menu-toggle:hover {
-      color: var(--ink);
-      border-color: var(--line);
-      background: rgba(255, 255, 255, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: transparent;
-      font: inherit;
-      cursor: pointer;
-      color: var(--ink);
-      width: 46px;
-      height: 46px;
-      padding: 0;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent));
-      color: #fff8f3;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      box-shadow: 0 18px 42px rgba(23, 74, 69, 0.2);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .cta:hover { transform: translateY(-3px); box-shadow: 0 22px 50px rgba(23, 74, 69, 0.24); }
-    .ghost { border: 1px solid var(--line); background: rgba(255, 255, 255, 0.34); }
-
-    .hero {
-      padding: 32px 0 28px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-copy-panel,
-    .hero-visual,
-    .section-panel,
-    .project-card,
-    .timeline-card,
-    .contact-card,
-    .footer-panel {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: var(--panel);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-copy-panel {
-      padding: clamp(28px, 5vw, 54px);
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.1)),
-        linear-gradient(135deg, rgba(208, 107, 47, 0.12), rgba(23, 74, 69, 0.14));
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.55);
-      border: 1px solid var(--line);
-      font-size: 0.83rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      margin: 22px 0 18px;
-      font-size: clamp(3.2rem, 8vw, 6.6rem);
-      line-height: 0.92;
-      letter-spacing: -0.08em;
-      max-width: 8ch;
-    }
-
-    .hero-copy {
-      max-width: 58ch;
-      margin: 0;
-      font-size: 1.05rem;
-      color: var(--muted);
-    }
-
-    .hero-tags { margin: 24px 0 0; }
-
-    .pill,
-    .timeline-tag,
-    .project-tag {
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.38);
-      font-size: 0.92rem;
-    }
-
-    .hero-actions { margin-top: 28px; }
-
-    .stats {
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .stat {
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255, 251, 245, 0.7);
-      border: 1px solid rgba(22, 22, 22, 0.08);
-    }
-
-    .stat-value {
-      display: block;
-      font-size: 1.9rem;
-      letter-spacing: -0.05em;
-      margin-bottom: 6px;
-    }
-
-    .stat span { color: var(--muted); font-size: 0.92rem; }
-
-    .hero-visual {
-      position: relative;
-      overflow: hidden;
-      min-height: 100%;
-      padding: 24px;
-      background:
-        linear-gradient(180deg, rgba(23, 74, 69, 0.08), rgba(208, 107, 47, 0.18)),
-        var(--panel-strong);
-    }
-
-    .hero-visual::before,
-    .hero-visual::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(2px);
-    }
-
-    .hero-visual::before {
-      width: 220px;
-      height: 220px;
-      top: -60px;
-      right: -30px;
-      background: rgba(208, 107, 47, 0.18);
-    }
-
-    .hero-visual::after {
-      width: 180px;
-      height: 180px;
-      bottom: -40px;
-      left: -20px;
-      background: rgba(23, 74, 69, 0.16);
-    }
-
-    .portrait-frame {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      min-height: 520px;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #d8c4a8;
-    }
-
-    .portrait-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .floating-card {
-      position: absolute;
-      z-index: 2;
-      max-width: 230px;
-      padding: 18px 18px 16px;
-      border-radius: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      background: rgba(22, 22, 22, 0.74);
-      color: #fff9f3;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
-    }
-
-    .floating-card strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
-    }
-
-    .floating-card span {
-      font-size: 0.88rem;
-      color: rgba(255, 249, 243, 0.8);
-    }
-
-    .floating-card.top { top: 38px; left: 18px; }
-    .floating-card.bottom { right: 18px; bottom: 28px; }
-
-    .content {
-      padding: 20px 0 64px;
-      display: grid;
-      gap: 26px;
-    }
-
-    .section-panel { padding: clamp(24px, 4vw, 38px); }
-    .section-head { display: grid; gap: 12px; margin-bottom: 24px; }
-
-    .section-label {
-      color: var(--accent-2);
-      text-transform: uppercase;
-      font-weight: 800;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-    }
-
-    .section-title {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      letter-spacing: -0.07em;
-      line-height: 0.95;
-      max-width: 10ch;
-    }
-
-    .section-intro {
-      margin: 0;
-      max-width: 68ch;
-      color: var(--muted);
-    }
-
-    .about-grid,
-    .contact-grid,
-    .highlights-grid,
-    .meta-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .about-grid { grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr); }
-    .highlights-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .contact-grid { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr); align-items: start; }
-
-    .highlight,
-    .meta-card {
-      padding: 20px;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.38);
-    }
-
-    .highlight strong,
-    .meta-card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-      letter-spacing: -0.03em;
-    }
-
-    .highlight p,
-    .meta-card p,
-    .project-card p,
-    .timeline-copy,
-    .contact-card p { margin: 0; color: var(--muted); }
-
-    .project-grid,
-    .timeline-grid { display: grid; gap: 18px; }
-    .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    .project-card {
-      padding: 24px;
-      min-height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::after {
-      content: "";
-      position: absolute;
-      width: 130px;
-      height: 130px;
-      right: -34px;
-      bottom: -42px;
-      border-radius: 32px;
-      background: linear-gradient(135deg, rgba(208, 107, 47, 0.14), rgba(23, 74, 69, 0.16));
-      transform: rotate(20deg);
-    }
-
-    .project-icon {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      color: #fff8f3;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent));
-      margin-bottom: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.45rem;
-      letter-spacing: -0.05em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-tags,
-    .project-link { position: relative; z-index: 1; }
-    .project-tags { margin-top: 18px; }
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-      font-weight: 700;
-    }
-
-    .timeline-card {
-      padding: 22px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .timeline-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: start;
-      flex-wrap: wrap;
-    }
-
-    .timeline-year {
-      font-size: 1.5rem;
-      letter-spacing: -0.05em;
-    }
-
-    .timeline-card h3 {
-      margin: 0;
-      font-size: 1.22rem;
-      letter-spacing: -0.03em;
-    }
-
-    .contact-copy {
-      max-width: 56ch;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .contact-stack {
-      display: grid;
-      gap: 16px;
-    }
-
-    .contact-card {
-      padding: 22px;
-    }
-
-    .contact-card span {
-      display: inline-block;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.76rem;
-      color: var(--accent-2);
-      font-weight: 800;
-    }
-
-    .contact-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.3rem;
-      letter-spacing: -0.05em;
-    }
-
-    .footer {
-      padding-bottom: 34px;
-    }
-
-    .footer-panel {
-      padding: 24px 26px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .footer-name {
-      font-size: 1.2rem;
-      letter-spacing: -0.04em;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid,
-      .highlights-grid,
-      .project-grid,
-      .meta-grid { grid-template-columns: 1fr; }
-
-      .stats { grid-template-columns: 1fr; }
-      .portrait-frame { min-height: 460px; }
-    }
-
-    @media (max-width: 820px) {
-      .nav { align-items: start; border-radius: 28px; }
-      .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
-      .nav-links {
-        position: absolute;
-        top: calc(100% + 12px);
-        left: 14px;
-        right: 14px;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 14px;
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        background: var(--panel-strong);
-        box-shadow: var(--shadow);
-      }
-      .nav-links.open { display: flex; }
-      .nav-actions .ghost { display: none; }
-      .hero h1 { max-width: none; }
-    }
-
-    @media (max-width: 640px) {
-      .container { width: calc(100% - 18px); }
-      .topbar { padding: 10px 0; }
-      .nav { padding: 10px 12px; }
-      .brand-copy span { display: none; }
-      .hero-copy-panel,
-      .section-panel,
-      .project-card,
-      .timeline-card,
-      .contact-card,
-      .footer-panel { padding-left: 18px; padding-right: 18px; }
-      .hero h1 { font-size: 2.9rem; }
-      .floating-card {
-        position: static;
-        margin-top: 14px;
-        max-width: none;
-      }
-      .hero-visual { display: grid; gap: 14px; }
-      .portrait-frame { min-height: 360px; }
-      .footer-panel { flex-direction: column; align-items: start; }
-    }
+    :root { color-scheme: light; --bg:#edf3ec; --bg-elevated:rgba(248,250,246,.82); --panel:rgba(255,255,255,.42); --panel-strong:rgba(255,255,255,.7); --line:rgba(9,17,12,.1); --line-soft:rgba(9,17,12,.05); --text:#08110c; --muted:#5a665f; --muted-strong:#2b3730; --accent:#0f6b43; --accent-2:#3956d8; --accent-3:#b26d2f; --shadow:0 24px 64px rgba(17,31,22,.12); --radius-xl:32px; --radius-lg:24px; --radius-md:18px; --max-width:1180px; --surface:rgba(255,255,255,.72); --surface-strong:rgba(255,255,255,.92); }
+    body.dark-mode { color-scheme: dark; --bg:#07090f; --bg-elevated:rgba(12,15,24,.72); --panel:rgba(255,255,255,.03); --panel-strong:rgba(255,255,255,.05); --line:rgba(255,255,255,.08); --line-soft:rgba(255,255,255,.05); --text:#f5f7fb; --muted:#9aa4b6; --muted-strong:#c9d1de; --accent:#67e8c6; --accent-2:#7c8cff; --accent-3:#f2b56f; --shadow:0 28px 80px rgba(0,0,0,.36); --surface:rgba(16,18,30,.74); --surface-strong:rgba(18,21,34,.94); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:"Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(124,140,255,.16), transparent 28%),radial-gradient(circle at top right, rgba(103,232,198,.14), transparent 26%),radial-gradient(circle at bottom right, rgba(242,181,111,.12), transparent 24%),var(--bg); line-height:1.65; overflow-x:hidden; }
+    body::before { content:""; position:fixed; inset:0; background:linear-gradient(var(--line-soft) 1px, transparent 1px),linear-gradient(90deg, var(--line-soft) 1px, transparent 1px); background-size:88px 88px; mask-image:linear-gradient(180deg, rgba(0,0,0,.6), transparent 82%); pointer-events:none; opacity:.35; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+    .page { position:relative; isolation:isolate; }
+    .container { width:min(var(--max-width), calc(100% - clamp(20px, 4vw, 40px))); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:50; padding:18px 0; backdrop-filter:blur(18px); background:linear-gradient(180deg, rgba(237,243,236,.82), rgba(237,243,236,.24) 70%, transparent); }
+    body.dark-mode .topbar { background:linear-gradient(180deg, rgba(7,9,15,.9), rgba(7,9,15,.32) 70%, transparent); }
+    .nav { width:min(var(--max-width), calc(100% - clamp(20px, 4vw, 40px))); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:12px 18px; border:1px solid var(--line); border-radius:999px; background:var(--surface); box-shadow:var(--shadow); position:relative; }
+    body.dark-mode .nav { background:var(--bg-elevated); }
+    .brand { display:flex; align-items:center; gap:14px; font-family:"Space Grotesk",sans-serif; letter-spacing:-.02em; }
+    .brand-mark { width:44px; height:44px; border-radius:14px; display:grid; place-items:center; color:white; font-weight:700; background:linear-gradient(135deg, #07110c, #0f6b43, #7bc96b); box-shadow:0 18px 35px rgba(0,0,0,.18); font-size:.9rem; flex:0 0 auto; }
+    .brand-copy strong { font-size:.9rem; line-height:1.05; }
+    .brand-copy span { color:var(--muted); font-size:.66rem; }
+    .nav-links,.nav-actions { display:flex; align-items:center; gap:10px; }
+    .nav-links a,.ghost-link,.mode-toggle { padding:11px 15px; border-radius:999px; color:var(--muted); border:1px solid transparent; transition:color .25s ease,border-color .25s ease,background .25s ease,transform .25s ease; font-size:.82rem; }
+    .nav-links a:hover,.ghost-link:hover,.mode-toggle:hover { color:var(--text); border-color:var(--line); background:rgba(255,255,255,.08); transform:translateY(-2px); }
+    .menu-toggle { display:none; width:46px; height:46px; border:1px solid var(--line); border-radius:14px; background:var(--surface); cursor:pointer; font:inherit; color:var(--text); }
+    .mode-toggle { background:var(--surface); cursor:pointer; font:inherit; width:46px; height:46px; display:inline-flex; align-items:center; justify-content:center; padding:0; font-size:.98rem; color:var(--text); }
+    .hero { padding:clamp(28px, 5vw, 48px) 0 clamp(56px, 8vw, 80px); }
+    .hero-shell { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr); gap:clamp(28px, 4vw, 48px); align-items:center; padding:clamp(24px, 4vw, 42px); border-radius:36px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(145deg, rgba(255,255,255,.08), transparent 42%),linear-gradient(135deg,#0b0c12 0%,#1a1f38 28%,#4f2b7f 58%,#7f4b2a 82%,#16746d 100%); box-shadow:0 32px 84px rgba(0,0,0,.28); }
+    .hero-kicker,.section-kicker { display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border:1px solid var(--line); border-radius:999px; color:var(--accent); background:rgba(255,255,255,.03); font-size:.88rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
+    .hero-kicker { margin-bottom:24px; }
+    .hero h1 { margin:0; font-family:"Space Grotesk",sans-serif; font-size:clamp(3rem, 8vw, 6.6rem); line-height:.94; letter-spacing:-.06em; max-width:8ch; color:#f5f7fb; }
+    .hero-copy { max-width:58ch; margin:24px 0 0; color:rgba(245,247,251,.84); font-size:clamp(1rem, 2vw, 1.08rem); line-height:1.85; }
+    .hero-actions { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:32px; }
+    .cta-button { display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:999px; background:linear-gradient(135deg, var(--accent-2), var(--accent), var(--accent-3)); color:#06080d; font-weight:700; box-shadow:0 24px 50px rgba(103,232,198,.2); transition:transform .28s ease,box-shadow .28s ease; }
+    .cta-button:hover { transform:translateY(-3px); box-shadow:0 30px 60px rgba(103,232,198,.24); }
+    .hero-meta { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:16px; margin-top:40px; }
+    .hero-stat { padding:22px 18px 18px; border:1px solid rgba(255,255,255,.08); border-radius:24px; background:rgba(10,12,22,.54); }
+    .hero-stat strong { display:block; margin-bottom:8px; font-family:"Space Grotesk",sans-serif; font-size:2rem; letter-spacing:-.04em; color:#f5f7fb; }
+    .hero-stat span { color:rgba(245,247,251,.76); }
+    .hero-visual { position:relative; min-height:clamp(420px, 52vw, 620px); display:grid; place-items:center; }
+    .visual-frame { position:relative; width:min(100%, 470px); aspect-ratio:.88; animation:floaty 6s ease-in-out infinite; }
+    .visual-outline,.visual-panel { position:absolute; inset:0; border-radius:40px; }
+    .visual-outline { inset:8%; border:1px solid rgba(255,255,255,.12); transform:rotate(8deg); }
+    .visual-panel { overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.16), transparent 22%),rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); box-shadow:var(--shadow); }
+    .visual-panel img { width:100%; height:100%; object-fit:cover; }
+    .floating-note { position:absolute; width:clamp(170px, 22vw, 220px); padding:18px 20px; border-radius:24px; border:1px solid rgba(255,255,255,.12); background:rgba(9,12,20,.66); backdrop-filter:blur(18px); box-shadow:var(--shadow); }
+    .floating-note strong { display:block; margin-bottom:6px; font-size:1rem; color:#f5f7fb; }
+    .floating-note span { color:rgba(245,247,251,.84); line-height:1.55; }
+    .floating-note.top { top:6%; left:-4%; animation:floaty 7s ease-in-out infinite; }
+    .floating-note.bottom { right:-2%; bottom:9%; animation:floaty 5.5s ease-in-out infinite reverse; }
+    .content { display:grid; gap:clamp(48px, 7vw, 72px); padding-bottom:clamp(56px, 8vw, 72px); }
+    .section { padding-top:8px; }
+    .section-header { display:grid; gap:16px; margin-bottom:32px; }
+    .section-title { margin:0; font-family:"Space Grotesk",sans-serif; font-size:clamp(2rem, 4vw, 3.4rem); line-height:.98; letter-spacing:-.05em; }
+    .section-intro { max-width:64ch; margin:0; color:var(--muted); font-size:1rem; line-height:1.85; }
+    .about-layout { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr); gap:clamp(24px, 4vw, 40px); align-items:start; }
+    .summary-block { display:grid; gap:28px; }
+    .summary-text { max-width:62ch; color:var(--muted-strong); font-size:clamp(.98rem, 1.8vw, 1.04rem); line-height:1.9; }
+    .tag-list { display:flex; flex-wrap:wrap; gap:12px; }
+    .tag { padding:10px 14px; border-radius:999px; border:1px solid var(--line); color:var(--muted-strong); background:rgba(255,255,255,.03); font-size:.94rem; }
+    .metric-list { display:grid; gap:22px; padding-left:24px; border-left:1px solid var(--line); }
+    .metric-item strong { display:block; margin-bottom:6px; font-family:"Space Grotesk",sans-serif; font-size:1.8rem; letter-spacing:-.04em; }
+    .metric-item span { color:var(--muted); }
+    .education-road { position:relative; display:grid; gap:0; margin-top:8px; padding-left:48px; }
+    .education-road::before { content:""; position:absolute; left:13px; top:8px; bottom:8px; width:2px; background:linear-gradient(180deg, var(--accent), rgba(124,140,255,.28), transparent); }
+    .education-stop { position:relative; display:grid; grid-template-columns:1fr; gap:18px; align-items:start; padding:34px 0; border-bottom:1px solid var(--line); }
+    .education-stop:last-child { border-bottom:none; }
+    .education-stop::before { content:""; position:absolute; left:-48px; top:34px; width:28px; height:28px; border-radius:999px; background:linear-gradient(135deg, var(--accent-2), var(--accent)); box-shadow:0 0 0 10px rgba(255,255,255,.03); }
+    .edu-topline { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:12px; }
+    .chip { display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; border:1px solid var(--line); color:var(--muted); background:rgba(255,255,255,.02); font-size:.94rem; }
+    .education-stop h3,.experience-entry h3,.project-card h3,.skill-group h3,.info-list h3 { margin:0 0 10px; font-size:1.35rem; letter-spacing:-.03em; }
+    .education-stop p,.experience-entry p,.project-card p,.skill-group p,.info-list p,.contact-line p { margin:0; color:var(--muted); line-height:1.85; }
+    .education-score { min-width:120px; padding-top:16px; border-top:1px solid var(--line); }
+    .education-score strong { display:block; font-family:"Space Grotesk",sans-serif; font-size:2rem; letter-spacing:-.05em; }
+    .experience-layout { display:grid; grid-template-columns:1fr; gap:24px; align-items:start; }
+    .experience-entry { padding-bottom:24px; border-bottom:1px solid var(--line); }
+    .experience-notes { display:grid; gap:14px; margin:0; padding:24px 0 0 24px; border-top:1px solid var(--line); color:var(--muted); }
+    .experience-notes li { line-height:1.8; }
+    .projects-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px; }
+    .project-card { position:relative; min-height:100%; padding:28px; border-radius:var(--radius-lg); border:1px solid var(--line); background:linear-gradient(145deg, rgba(255,255,255,.05), transparent 52%),rgba(255,255,255,.03); box-shadow:var(--shadow); overflow:hidden; transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease; }
+    .project-card:hover { transform:translateY(-6px); border-color:rgba(103,232,198,.26); box-shadow:0 30px 70px rgba(0,0,0,.28); }
+    .project-card::after { content:""; position:absolute; right:-20px; bottom:-34px; width:120px; height:120px; border-radius:28px; background:linear-gradient(135deg, rgba(124,140,255,.18), rgba(103,232,198,.18)); transform:rotate(18deg); }
+    .project-icon { width:54px; height:54px; margin-bottom:22px; border-radius:18px; display:grid; place-items:center; color:#04070c; background:linear-gradient(135deg, var(--accent-2), var(--accent), var(--accent-3)); box-shadow:0 16px 34px rgba(103,232,198,.18); }
+    .project-tags { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    .project-link { display:inline-flex; align-items:center; gap:8px; margin-top:18px; font-weight:600; color:var(--muted-strong); position:relative; z-index:1; }
+    .skill-layout { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px; }
+    .skill-group { padding:26px; border:1px solid var(--line); border-radius:var(--radius-lg); background:linear-gradient(145deg, rgba(255,255,255,.05), transparent 52%),rgba(255,255,255,.03); box-shadow:var(--shadow); }
+    .skill-group:last-child,.skill-group:nth-last-child(2) { padding:26px; border-bottom:1px solid var(--line); }
+    .info-grid { display:grid; grid-template-columns:1fr; gap:48px; }
+    .info-list { display:grid; gap:22px; }
+    .info-row { padding-bottom:20px; border-bottom:1px solid var(--line); }
+    .info-row:last-child { border-bottom:none; padding-bottom:0; }
+    .contact-layout { display:grid; grid-template-columns:1fr; gap:28px; align-items:start; }
+    .contact-lead { max-width:48ch; color:var(--muted-strong); font-size:1.04rem; line-height:1.9; }
+    .contact-lines { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px; }
+    .contact-line { padding:24px; border:1px solid var(--line); border-radius:var(--radius-lg); background:linear-gradient(145deg, rgba(255,255,255,.05), transparent 52%),rgba(255,255,255,.03); box-shadow:var(--shadow); }
+    .contact-line:last-child { padding:24px; border-bottom:1px solid var(--line); }
+    .contact-line span { display:inline-block; margin-bottom:8px; color:var(--accent); font-size:.88rem; text-transform:uppercase; letter-spacing:.05em; font-weight:700; }
+    .contact-line h3 { margin:0 0 8px; font-size:1.18rem; }
+    .footer { padding:0 0 40px; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; padding-top:28px; border-top:1px solid var(--line); color:var(--muted); }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s ease,transform .8s ease; }
+    .reveal.active { opacity:1; transform:translateY(0); }
+    @keyframes floaty { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-14px); } }
+    @media (max-width:1080px) { .hero-shell,.about-layout { grid-template-columns:1fr; } .hero-visual { min-height:480px; } .metric-list { padding-left:0; padding-top:24px; border-left:none; border-top:1px solid var(--line); } }
+    @media (max-width:860px) { .menu-toggle { display:inline-flex; align-items:center; justify-content:center; } .nav { width:min(var(--max-width), calc(100% - clamp(20px, 4vw, 40px))); border-radius:28px; align-items:flex-start; padding:12px 16px; } .brand { gap:10px; } .brand-mark { width:40px; height:40px; border-radius:12px; font-size:.82rem; } .mode-toggle { width:42px; height:42px; font-size:.9rem; } .nav-links { position:absolute; top:calc(100% + 12px); left:16px; right:16px; display:none; flex-direction:column; align-items:stretch; padding:14px; border:1px solid var(--line); border-radius:24px; background:var(--surface-strong); box-shadow:var(--shadow); } .nav-links.open { display:flex; } .nav-links a { padding:11px 12px; font-size:.9rem; } .nav-actions .ghost-link { display:none; } .hero-meta { grid-template-columns:1fr; } .education-score { padding-top:12px; } }
+    @media (max-width:640px) { .hero-shell { padding:24px 20px; } .projects-grid,.skill-layout,.contact-lines { grid-template-columns:1fr; } .project-card,.skill-group,.contact-line { padding:22px; } .education-road { padding-left:38px; } .education-stop::before { left:-38px; } }
+    @media (max-width:560px) { .container,.nav { width:calc(100% - 20px); } .topbar { padding:10px 0 2px; } .nav { padding:10px 12px; } .brand-copy span { display:none; } .brand-copy strong { font-size:.76rem; } .hero h1 { font-size:3.2rem; } .floating-note { width:160px; padding:14px 16px; } .footer-inner { flex-direction:column; align-items:flex-start; } }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="#top">
-          <span class="brand-mark">BB</span>
-          <span class="brand-copy">
-            <strong>Bhargav Battula</strong>
-            <span>M.Tech CSE | NIT Goa</span>
-          </span>
-        </a>
-        <button class="menu-toggle" type="button" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#journey">Journey</a>
-          <a href="#projects">Projects</a>
-          <a href="#credentials">Credentials</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="nav-actions">
-          <a class="ghost" href="Contact me.html">Contact Page</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero" id="top">
-    <div class="container hero-grid">
-      <div class="hero-copy-panel reveal">
-        <div class="eyebrow"><i class="fa-solid fa-sparkles"></i> Portfolio 2026</div>
-        <h1>Engineer, builder, and postgraduate in computer science.</h1>
-        <p class="hero-copy">I am Bhargav Battula, an M.Tech CSE student at NIT Goa and former Infosys Systems Engineer. My work sits at the intersection of disciplined software execution, practical automation, and product-focused development.</p>
-        <div class="hero-tags">
-          <span class="pill">Ex-Infosys</span>
-          <span class="pill">NIT Goa</span>
-          <span class="pill">GATE CSE 2025</span>
-          <span class="pill">GATE DA 2025</span>
-        </div>
-        <div class="hero-actions">
-          <a class="cta" href="#projects"><i class="fa-solid fa-arrow-right"></i>View Projects</a>
-          <a class="ghost" href="#contact">Start a Conversation</a>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <strong class="stat-value">8.71</strong>
-            <span>M.Tech CGPA at NIT Goa</span>
-          </div>
-          <div class="stat">
-            <strong class="stat-value">8.99</strong>
-            <span>B.Tech CGPA at RGUKT Nuzvid</span>
-          </div>
-          <div class="stat">
-            <strong class="stat-value">1+ Year</strong>
-            <span>Enterprise experience at Infosys</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal">
-        <div class="portrait-frame">
-          <img src="me4.png" alt="Portrait of Bhargav Battula">
-        </div>
-        <div class="floating-card top">
-          <strong>Current focus</strong>
-          <span>Full stack development, AI/ML workflows, and building projects with strong execution quality.</span>
-        </div>
-        <div class="floating-card bottom">
-          <strong>Academic track</strong>
-          <span>M.Tech CSE at NIT Goa, 2025 to 2027.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="container content">
-    <section class="section-panel reveal" id="about">
-      <div class="section-head">
-        <div class="section-label">About</div>
-        <h2 class="section-title">A profile built on consistency and applied work.</h2>
-        <p class="section-intro">I moved from a strong academic foundation into enterprise engineering at Infosys, then into postgraduate study in computer science. That path gave me a combination of delivery discipline, analytical preparation, and project-driven learning across Python, JavaScript, SQL, automation, and user-facing interfaces.</p>
-      </div>
-      <div class="about-grid">
-        <div class="highlights-grid">
-          <article class="highlight">
-            <strong>Enterprise exposure</strong>
-            <p>Worked in SAP BW development and support workflows with production-facing responsibilities and structured issue handling.</p>
-          </article>
-          <article class="highlight">
-            <strong>Competitive performance</strong>
-            <p>Qualified GATE in both Computer Science and Data Analytics in 2025 with national ranks in both papers.</p>
-          </article>
-          <article class="highlight">
-            <strong>Builder mindset</strong>
-            <p>Comfortable moving from automation scripts to responsive interfaces, problem-solving, and applied software implementation.</p>
-          </article>
-        </div>
-        <div class="meta-grid">
-          <article class="meta-card">
-            <strong>AIR 10139</strong>
-            <p>GATE CSE 2025, within the top 6% of 170,825 candidates.</p>
-          </article>
-          <article class="meta-card">
-            <strong>AIR 9572</strong>
-            <p>GATE DA 2025, within the top 17% of 57,054 candidates.</p>
-          </article>
-          <article class="meta-card">
-            <strong>Hyderabad</strong>
-            <p>Worked in an enterprise environment with production responsibility and support ownership.</p>
-          </article>
-          <article class="meta-card">
-            <strong>Core stack</strong>
-            <p>C, C++, Python, JavaScript, HTML, CSS, SQL, GitHub, TensorFlow, and practical web UI work.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-panel reveal" id="journey">
-      <div class="section-head">
-        <div class="section-label">Journey</div>
-        <h2 class="section-title">Education and experience, in sequence.</h2>
-        <p class="section-intro">The timeline below shows the shift from academic performance to enterprise execution and then back into deeper technical study.</p>
-      </div>
-      <div class="timeline-grid">
-        <article class="timeline-card">
-          <div class="timeline-top">
-            <div>
-              <div class="timeline-year">2025 - 2027</div>
-              <h3>M.Tech in Computer Science and Engineering</h3>
-            </div>
-            <div class="timeline-tags"><span class="timeline-tag">NIT Goa</span><span class="timeline-tag">CGPA 8.71</span></div>
-          </div>
-          <p class="timeline-copy">Current postgraduate program focused on stronger computer science fundamentals, technical depth, and advanced software problem solving.</p>
-        </article>
-        <article class="timeline-card">
-          <div class="timeline-top">
-            <div>
-              <div class="timeline-year">2022 - 2023</div>
-              <h3>Systems Engineer</h3>
-            </div>
-            <div class="timeline-tags"><span class="timeline-tag">Infosys</span><span class="timeline-tag">Hyderabad</span></div>
-          </div>
-          <p class="timeline-copy">Worked as a SAP BW development and support consultant across monitoring, automation, support operations, workflow execution, and issue resolution in a production environment.</p>
-        </article>
-        <article class="timeline-card">
-          <div class="timeline-top">
-            <div>
-              <div class="timeline-year">2018 - 2022</div>
-              <h3>B.Tech in Chemical Engineering</h3>
-            </div>
-            <div class="timeline-tags"><span class="timeline-tag">RGUKT Nuzvid</span><span class="timeline-tag">CGPA 8.99</span></div>
-          </div>
-          <p class="timeline-copy">Strong academic performance followed by a deliberate transition into software development, technical preparation, and independent project work.</p>
-        </article>
-        <article class="timeline-card">
-          <div class="timeline-top">
-            <div>
-              <div class="timeline-year">2016 - 2018</div>
-              <h3>Pre-University Course</h3>
-            </div>
-            <div class="timeline-tags"><span class="timeline-tag">RGUKT Nuzvid</span><span class="timeline-tag">CGPA 9.31</span></div>
-          </div>
-          <p class="timeline-copy">Built the academic consistency that carried into later competitive exams and higher education.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-panel reveal" id="projects">
-      <div class="section-head">
-        <div class="section-label">Projects</div>
-        <h2 class="section-title">Selected work across automation and interfaces.</h2>
-        <p class="section-intro">These projects reflect a practical bias: useful tools, interactive interfaces, and systems that solve a concrete task rather than just demonstrate syntax.</p>
-      </div>
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-icon"><i class="fa-solid fa-database"></i></div>
-          <h3>BMI SAP BW/4HANA</h3>
-          <p>Hands-on work in monitoring, automation, and issue resolution for SAP BW data flows, with exposure to SAP Analytics Cloud and business intelligence workflows.</p>
-          <div class="project-tags">
-            <span class="project-tag">SAP BW/4HANA</span>
-            <span class="project-tag">Analytics Cloud</span>
-            <span class="project-tag">Support Ops</span>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-          <h3>Voice Assistant With AI Response</h3>
-          <p>Python-based assistant using wake-word activation, speech recognition, browser actions, music access, calculator functions, and response workflows.</p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Speech</span>
-            <span class="project-tag">Automation</span>
-          </div>
-          <a class="project-link" href="https://github.com/ZaynVK/Voice-Assistant-With-Keyword-spotting" target="_blank" rel="noreferrer">Source <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </article>
-        <article class="project-card">
-          <div class="project-icon"><i class="fa-solid fa-table-cells-large"></i></div>
-          <h3>Interactive Web-Based Sudoku Solver</h3>
-          <p>Backtracking-based JavaScript Sudoku solver with live input handling, dynamic board rendering, and clear visual feedback.</p>
-          <div class="project-tags">
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">Backtracking</span>
-            <span class="project-tag">Responsive UI</span>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-icon"><i class="fa-solid fa-paw"></i></div>
-          <h3>DogLuck Website</h3>
-          <p>Responsive landing page for a fictional dog-dating app with pricing, testimonials, and conversion-focused layout decisions.</p>
-          <div class="project-tags">
-            <span class="project-tag">HTML</span>
-            <span class="project-tag">CSS</span>
-            <span class="project-tag">Landing Page</span>
-          </div>
-          <a class="project-link" href="https://zaynvk.github.io/tindog/" target="_blank" rel="noreferrer">Visit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-panel reveal" id="credentials">
-      <div class="section-head">
-        <div class="section-label">Credentials</div>
-        <h2 class="section-title">Certifications and recognitions.</h2>
-      </div>
-      <div class="about-grid">
-        <div class="highlights-grid">
-          <article class="highlight">
-            <strong>Infosys Certified Python Associate</strong>
-            <p>Issued in May 2023.</p>
-          </article>
-          <article class="highlight">
-            <strong>Infosys Certified Database and SQL Professional</strong>
-            <p>Issued in March 2023.</p>
-          </article>
-          <article class="highlight">
-            <strong>Accenture Developer Program</strong>
-            <p>Completed in August 2022.</p>
-          </article>
-        </div>
-        <div class="meta-grid">
-          <article class="meta-card">
-            <strong>NCC C Certificate</strong>
-            <p>Earned during time at RGUKT Nuzvid.</p>
-          </article>
-          <article class="meta-card">
-            <strong>Second Prize</strong>
-            <p>IICHE ARC and RGUKTN national quiz recognition in 2019.</p>
-          </article>
-          <article class="meta-card">
-            <strong>GATE Qualified</strong>
-            <p>Qualified in both CSE and DA in 2025.</p>
-          </article>
-          <article class="meta-card">
-            <strong>Areas of interest</strong>
-            <p>Development, AI/ML, full stack systems, and Android-oriented software work.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-panel reveal" id="contact">
-      <div class="section-head">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title">Open to collaboration and software opportunities.</h2>
-        <p class="contact-copy">Reach out for internships, software roles, project collaboration, or technical discussions. I prefer direct and concrete communication.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-stack">
-          <a class="contact-card" href="mailto:25cse2006@nitgoa.ac.in">
-            <span>Academic email</span>
-            <h3>25cse2006@nitgoa.ac.in</h3>
-            <p>Primary contact for academic and formal communication.</p>
+  <div class="page">
+    <header class="topbar">
+      <div class="container">
+        <nav class="nav">
+          <a class="brand" href="#top">
+            <span class="brand-mark">BB</span>
+            <span class="brand-copy"><strong>Bhargav Battula</strong><br><span style="color:var(--muted);font-size:.92rem;">M.Tech CSE | NIT Goa</span></span>
           </a>
-          <a class="contact-card" href="mailto:battulabhargav222@gmail.com">
-            <span>Personal email</span>
-            <h3>battulabhargav222@gmail.com</h3>
-            <p>Best for quick portfolio and collaboration messages.</p>
-          </a>
-        </div>
-        <div class="contact-stack">
-          <a class="contact-card" href="tel:+917286066067">
-            <span>Phone</span>
-            <h3>+91 7286066067</h3>
-            <p>Available for role discussions and project coordination.</p>
-          </a>
-          <a class="contact-card" href="Contact me.html">
-            <span>Profiles and links</span>
-            <h3>Open contact hub</h3>
-            <p>See GitHub, LinkedIn, and quick access links in one place.</p>
-          </a>
+          <button class="menu-toggle" type="button" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="nav-actions">
+            <a class="ghost-link" href="Contact me.html">Contact Page</a>
+            <button class="mode-toggle" type="button" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="reveal">
+            <div class="hero-kicker"><i class="fa-solid fa-code-branch"></i>Systems Engineer turned M.Tech CSE candidate</div>
+            <h1>Bhargav Battula</h1>
+            <p class="hero-copy">Ex-Infosys SAP BW consultant with strong academic performance, GATE qualifications in CSE and DA, and hands-on work across automation, web interfaces, and practical software development.</p>
+            <div class="hero-actions">
+              <a class="cta-button" href="#projects"><i class="fa-solid fa-arrow-right"></i>View Projects</a>
+              <a class="ghost-link" href="Contact me.html"><i class="fa-solid fa-paper-plane"></i>Contact</a>
+            </div>
+            <div class="hero-meta">
+              <div class="hero-stat"><strong>8.71</strong><span>M.Tech CSE CGPA at NIT Goa</span></div>
+              <div class="hero-stat"><strong>8.99</strong><span>B.Tech CGPA at RGUKT Nuzvid</span></div>
+              <div class="hero-stat"><strong>1+ Year</strong><span>Professional experience at Infosys</span></div>
+            </div>
+          </div>
+          <div class="hero-visual reveal">
+            <div class="visual-frame">
+              <div class="visual-outline"></div>
+              <div class="visual-panel"><img src="me4.png" alt="Bhargav Battula portrait"></div>
+              <div class="floating-note top"><strong>Current</strong><span>M.Tech CSE, NIT Goa, 2025 to 2027</span></div>
+              <div class="floating-note bottom"><strong>Focus</strong><span>Development, AI/ML, full stack systems, Android</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="footer container">
-    <div class="footer-panel reveal">
-      <div>
-        <div class="footer-name">Bhargav Battula</div>
-        <div>Portfolio website for work, academic profile, and technical projects.</div>
+    <main class="container content">
+      <section class="section reveal" id="about">
+        <div class="section-header">
+          <div class="section-kicker"><i class="fa-solid fa-user"></i>About</div>
+          <h2 class="section-title">About</h2>
+        </div>
+        <div class="about-layout">
+          <div class="summary-block">
+            <p class="summary-text">I am currently pursuing M.Tech in Computer Science and Engineering at NIT Goa after working at Infosys as a Systems Engineer in SAP BW development and support. My background combines academic consistency, enterprise workflow exposure, and project-driven learning in Python, JavaScript, SQL, and modern UI work.</p>
+            <div class="tag-list">
+              <span class="tag">Ex-Infosys</span>
+              <span class="tag">NIT Goa</span>
+              <span class="tag">GATE CSE Qualified</span>
+              <span class="tag">GATE DA Qualified</span>
+              <span class="tag">Developer</span>
+            </div>
+          </div>
+          <div class="metric-list">
+            <div class="metric-item"><strong>AIR 10139</strong><span>GATE CSE 2025, top 6% of 170,825 candidates</span></div>
+            <div class="metric-item"><strong>AIR 9572</strong><span>GATE DA 2025, top 17% of 57,054 candidates</span></div>
+            <div class="metric-item"><strong>Hyderabad</strong><span>Worked in a production-facing enterprise environment at Infosys</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="skills">
+        <div class="section-header">
+          <div class="section-kicker"><i class="fa-solid fa-layer-group"></i>Skills</div>
+          <h2 class="section-title">Technical stack and areas of focus.</h2>
+        </div>
+        <div class="skill-layout">
+          <article class="skill-group"><h3>Languages</h3><p>C, C++, Python, HTML, CSS, JavaScript, SQL.</p></article>
+          <article class="skill-group"><h3>Developer Tools</h3><p>VS Code, GitHub, Google Colab, NumPy, pandas, scikit-learn, TensorFlow.</p></article>
+          <article class="skill-group"><h3>Coursework</h3><p>DSA, OS, COA, CN, TOC, DBMS, LA, MC.</p></article>
+          <article class="skill-group"><h3>Areas of Interest</h3><p>Development, AI/ML, full stack development, Android.</p></article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="experience">
+        <div class="section-header">
+          <div class="section-kicker"><i class="fa-solid fa-briefcase"></i>Experience</div>
+          <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="experience-layout">
+          <article class="experience-entry">
+            <div class="edu-topline"><span class="chip">July 2022 - Oct 2023</span><span class="chip">Hyderabad</span><span class="chip">Systems Engineer</span></div>
+            <h3>Infosys</h3>
+            <p>Worked as a SAP BW development and support consultant in a production environment across monitoring, automation, support operations, and issue resolution.</p>
+          </article>
+          <ul class="experience-notes">
+            <li>Supported enterprise workflow execution across existing SAP BW data flows.</li>
+            <li>Worked with SAP BW/4HANA and SAP Analytics Cloud in business intelligence workflows.</li>
+            <li>Built practical experience in troubleshooting, delivery discipline, and structured support operations.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section reveal" id="projects">
+        <div class="section-header">
+          <div class="section-kicker"><i class="fa-solid fa-laptop-code"></i>Projects</div>
+          <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card"><div class="project-icon"><i class="fa-solid fa-database"></i></div><h3>BMI SAP BW/4HANA</h3><p>Monitoring, automation, and issue resolution for SAP BW data flows with exposure to SAP Analytics Cloud and business intelligence workflows.</p><div class="project-tags"><span class="chip">SAP</span><span class="chip">BW/4HANA</span><span class="chip">Analytics Cloud</span></div></article>
+          <article class="project-card"><div class="project-icon"><i class="fa-solid fa-microphone-lines"></i></div><h3>Voice Assistant With AI Response</h3><p>Python-based assistant with wake word activation, speech recognition, web actions, music access, calculator functions, and news updates.</p><div class="project-tags"><span class="chip">Python</span><span class="chip">Speech</span><span class="chip">Automation</span></div><a class="project-link" href="https://github.com/ZaynVK/Voice-Assistant-With-Keyword-spotting" target="_blank" rel="noreferrer">Source<i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
+          <article class="project-card"><div class="project-icon"><i class="fa-solid fa-table-cells-large"></i></div><h3>Interactive Web-Based Sudoku Solver</h3><p>JavaScript Sudoku solver using backtracking with real-time validation, dynamic board rendering, and visual solution highlighting.</p><div class="project-tags"><span class="chip">JavaScript</span><span class="chip">Backtracking</span><span class="chip">UI</span></div></article>
+          <article class="project-card"><div class="project-icon"><i class="fa-solid fa-paw"></i></div><h3>DogLuck Website</h3><p>Responsive landing page for a fictional dog-dating app featuring pricing, testimonials, and a clear call to action.</p><div class="project-tags"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Landing Page</span></div><a class="project-link" href="https://zaynvk.github.io/tindog/" target="_blank" rel="noreferrer">Visit<i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="education">
+        <div class="section-header">
+          <div class="section-kicker"><i class="fa-solid fa-route"></i>Education</div>
+          <h2 class="section-title">Education</h2>
+        </div>
+        <div class="education-road">
+          <article class="education-stop"><div><div class="edu-topline"><span class="chip">2025 - 2027</span><span class="chip">NIT Goa</span></div><h3>M.Tech CSE</h3><p>Current postgraduate program in computer science and engineering with focus on deeper technical foundations.</p></div><div class="education-score"><strong>8.71</strong><span>CGPA</span></div></article>
+          <article class="education-stop"><div><div class="edu-topline"><span class="chip">2018 - 2022</span><span class="chip">RGUKT Nuzvid</span></div><h3>B.Tech Chemical</h3><p>Strong academic performance followed by a transition into software-focused work, projects, and technical preparation.</p></div><div class="education-score"><strong>8.99</strong><span>CGPA</span></div></article>
+          <article class="education-stop"><div><div class="edu-topline"><span class="chip">2016 - 2018</span><span class="chip">RGUKT Nuzvid</span></div><h3>Class XII</h3><p>Higher secondary education with strong consistency and academic fundamentals.</p></div><div class="education-score"><strong>9.31</strong><span>CGPA</span></div></article>
+          <article class="education-stop"><div><div class="edu-topline"><span class="chip">2016</span><span class="chip">MPL High School</span></div><h3>Class X</h3><p>Completed school education as Mandal topper, marking an early academic highlight.</p></div><div class="education-score"><strong>9.7</strong><span>CGPA</span></div></article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="info-grid">
+          <article>
+            <div class="section-header">
+              <div class="section-kicker"><i class="fa-solid fa-certificate"></i>Certifications</div>
+              <h2 class="section-title">Professional certifications.</h2>
+            </div>
+            <div class="info-list">
+              <div class="info-row"><h3>Infosys Certified Python Associate</h3><p>May 2023</p></div>
+              <div class="info-row"><h3>Infosys Certified Database and SQL Professional</h3><p>March 2023</p></div>
+              <div class="info-row"><h3>Accenture Developer Program</h3><p>August 2022</p></div>
+            </div>
+          </article>
+          <article>
+            <div class="section-header">
+              <div class="section-kicker"><i class="fa-solid fa-medal"></i>Achievements</div>
+              <h2 class="section-title">Selected recognitions.</h2>
+            </div>
+            <div class="info-list">
+              <div class="info-row"><h3>C Certificate Holder</h3><p>NCC certification earned during service at RGUKT Nuzvid.</p></div>
+              <div class="info-row"><h3>Second Prize, IICHE ARC & RGUKTN National Quiz</h3><p>National-level quiz recognition in 2019.</p></div>
+              <div class="info-row"><h3>GATE CSE and DA Qualified</h3><p>Qualified in 2025 with competitive national ranks.</p></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="contact">
+        <div class="section-header">
+          <div class="section-kicker"><i class="fa-solid fa-paper-plane"></i>Contact</div>
+          <h2 class="section-title">Open for collaboration, opportunities, and technical conversations.</h2>
+        </div>
+        <div class="contact-layout">
+          <p class="contact-lead">Reach out for software roles, project collaboration, academic discussions, or portfolio feedback.</p>
+          <div class="contact-lines">
+            <a class="contact-line" href="mailto:25cse2006@nitgoa.ac.in"><span>NIT Goa Mail</span><h3>25cse2006@nitgoa.ac.in</h3><p>Primary academic email</p></a>
+            <a class="contact-line" href="mailto:battulabhargav222@gmail.com"><span>Gmail</span><h3>battulabhargav222@gmail.com</h3><p>Personal email</p></a>
+            <a class="contact-line" href="tel:+917286066067"><span>Phone</span><h3>+91 7286066067</h3><p>Direct contact</p></a>
+            <a class="contact-line" href="https://github.com/ZaynVK" target="_blank" rel="noreferrer"><span>Profiles</span><h3>GitHub / LinkedIn / LeetCode</h3><p>Projects, professional profile, and coding presence</p></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div><strong>Bhargav Battula</strong><br>M.Tech CSE | NIT Goa</div>
+        <a class="cta-button" href="Contact me.html">Open Contact Page</a>
       </div>
-      <div class="footer-links">
-        <a class="ghost" href="#top">Back to top</a>
-        <a class="cta" href="Contact me.html">Open Contact Page</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    const rootBody = document.body;
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const themeToggle = document.querySelector(".mode-toggle");
+    const themeIcon = themeToggle.querySelector("i");
+    const applyTheme = (theme) => {
+      const isDark = theme === "dark";
+      rootBody.classList.toggle("dark-mode", isDark);
+      themeIcon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    };
+    applyTheme(localStorage.getItem("portfolio-theme") === "dark" ? "dark" : "light");
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = rootBody.classList.contains("dark-mode") ? "light" : "dark";
+      localStorage.setItem("portfolio-theme", nextTheme);
+      applyTheme(nextTheme);
     });
-
+    menuToggle.addEventListener("click", () => { navLinks.classList.toggle("open"); });
+    navLinks.querySelectorAll("a").forEach((link) => { link.addEventListener("click", () => navLinks.classList.remove("open")); });
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+          entry.target.classList.add("active");
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
+    }, { threshold:.14 });
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
   </script>
 </body>
 </html>

@@ -4,193 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Bhargav Battula</title>
-  <meta name="description" content="Contact page for Bhargav Battula.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
-    :root {
-      --bg: #f4eddf;
-      --ink: #171717;
-      --muted: #625d55;
-      --line: rgba(23, 23, 23, 0.12);
-      --panel: rgba(255, 249, 240, 0.74);
-      --panel-strong: rgba(255, 252, 246, 0.92);
-      --accent: #d06b2f;
-      --accent-2: #174a45;
-      --accent-3: #8d2f2f;
-      --shadow: 0 24px 70px rgba(55, 36, 17, 0.14);
-    }
-
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Manrope", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(208, 107, 47, 0.16), transparent 22%),
-        radial-gradient(circle at bottom right, rgba(23, 74, 69, 0.14), transparent 20%),
-        linear-gradient(180deg, #f9f4ea 0%, var(--bg) 100%);
-    }
-
-    a { color: inherit; text-decoration: none; }
-    .shell { width: min(1100px, calc(100% - 20px)); margin: 16px auto 28px; display: grid; gap: 18px; }
-
-    .topbar,
-    .hero,
-    .panel {
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      background: var(--panel);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 16px;
-      border-radius: 999px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .mark,
-    .cta,
-    .hero h1,
-    .panel h2,
-    .card h3 {
-      font-family: "Syne", sans-serif;
-    }
-
-    .mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      color: #fff7f1;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent), var(--accent-3));
-    }
-
-    .brand strong { display: block; letter-spacing: -0.03em; }
-    .brand span span { color: var(--muted); font-size: 0.84rem; }
-
-    .link-row { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    .ghost,
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      font-weight: 700;
-    }
-
-    .cta {
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent));
-      color: #fff8f3;
-    }
-
-    .hero {
-      padding: clamp(24px, 5vw, 42px);
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.1)),
-        linear-gradient(135deg, rgba(23, 74, 69, 0.14), rgba(208, 107, 47, 0.16));
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.48);
-      border: 1px solid var(--line);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: var(--accent-2);
-    }
-
-    .hero h1 {
-      margin: 18px 0 10px;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 0.94;
-      letter-spacing: -0.07em;
-      max-width: 8ch;
-    }
-
-    .hero p { margin: 0; max-width: 60ch; color: var(--muted); }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 18px;
-    }
-
-    .panel { padding: 26px; }
-    .panel h2 { margin: 0 0 18px; font-size: 2rem; letter-spacing: -0.06em; }
-
-    .stack { display: grid; gap: 14px; }
-
-    .card {
-      padding: 18px;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: var(--panel-strong);
-    }
-
-    .card span {
-      display: inline-block;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: var(--accent-2);
-    }
-
-    .card h3 { margin: 0 0 6px; font-size: 1.25rem; letter-spacing: -0.04em; }
-    .card p { margin: 0; color: var(--muted); }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 860px) {
-      .grid { grid-template-columns: 1fr; }
-      .topbar { border-radius: 28px; flex-direction: column; align-items: stretch; }
-      .link-row { width: 100%; }
-    }
-
-    @media (max-width: 560px) {
-      .shell { width: calc(100% - 14px); }
-      .topbar,
-      .hero,
-      .panel { padding-left: 18px; padding-right: 18px; }
-      .hero h1 { font-size: 2.4rem; }
-    }
+    :root { color-scheme: light; --bg:#edf3ec; --surface:rgba(251,252,248,.76); --surface-strong:rgba(255,255,255,.92); --text:#09110c; --muted:#415149; --line:rgba(9,17,12,.09); --accent:#0f6b43; --accent-2:#1d3d2f; --shadow:0 30px 70px rgba(16,28,19,.14); --gradient:linear-gradient(135deg,#0d1510 0%,#173126 32%,#0f6b43 68%,#8faa5a 100%); }
+    body.dark-mode { color-scheme: dark; --bg:#06070b; --surface:rgba(16,18,30,.74); --surface-strong:rgba(18,21,34,.94); --text:#f4f5f8; --muted:#9ca3b6; --line:rgba(255,255,255,.08); --accent:#d5b26f; --accent-2:#6d47d9; --shadow:0 32px 84px rgba(0,0,0,.5); --gradient:linear-gradient(135deg,#0b0c12 0%,#1a1f38 28%,#4f2b7f 58%,#7f4b2a 82%,#16746d 100%); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Outfit",sans-serif; color:var(--text); background:radial-gradient(circle at 15% 12%, rgba(15,107,67,.16), transparent 20%),radial-gradient(circle at 82% 18%, rgba(143,170,90,.14), transparent 22%),var(--bg); min-height:100vh; transition:background .4s ease,color .4s ease; }
+    a { color:inherit; text-decoration:none; }
+    .shell { width:min(1180px, calc(100% - 32px)); margin:20px auto 32px; display:grid; gap:32px; }
+    .topbar,.hero { border:1px solid var(--line); background:var(--surface); backdrop-filter:blur(18px); box-shadow:var(--shadow); }
+    .topbar { border-radius:999px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+    .brand { font-family:"Space Grotesk",sans-serif; display:flex; align-items:center; gap:12px; }
+    .mark { width:44px; height:44px; border-radius:14px; display:grid; place-items:center; color:white; background:var(--gradient); }
+    .top-actions { display:flex; gap:10px; align-items:center; }
+    .link-btn,.mode-toggle { padding:11px 15px; border-radius:999px; border:1px solid var(--line); background:var(--surface-strong); color:var(--text); font:inherit; cursor:pointer; transition:transform .25s ease,border-color .25s ease; }
+    .link-btn:hover,.mode-toggle:hover { transform:translateY(-4px); border-color:rgba(15,139,255,.3); }
+    .hero { border-radius:34px; padding:34px; background:linear-gradient(145deg, rgba(255,255,255,.14), transparent 42%),var(--gradient); color:white; position:relative; overflow:hidden; }
+    .hero::after { content:""; position:absolute; width:220px; height:220px; border-radius:999px; background:rgba(255,255,255,.12); top:-60px; right:8%; }
+    .hero h1 { margin:0; font-family:"Space Grotesk",sans-serif; font-size:clamp(2.5rem, 5vw, 4.5rem); line-height:.95; max-width:9ch; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+    .kicker { color:var(--accent); text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; font-weight:700; }
+    .block h2 { font-family:"Space Grotesk",sans-serif; font-size:clamp(1.8rem, 3vw, 2.7rem); line-height:1; margin:14px 0 18px; }
+    .line-list { display:grid; gap:18px; }
+    .line-item { padding:0 0 18px; border-bottom:1px solid var(--line); }
+    .line-item:last-child { border-bottom:none; padding-bottom:0; }
+    .line-item strong { display:block; margin-bottom:6px; font-size:1.05rem; }
+    .line-item p { color:var(--muted); line-height:1.75; margin:0; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s ease,transform .8s ease; }
+    .reveal.active { opacity:1; transform:translateY(0); }
+    @media (max-width:900px) { .grid { grid-template-columns:1fr; } .topbar { border-radius:28px; } }
+    @media (max-width:560px) { .shell { width:calc(100% - 20px); } .topbar { flex-direction:column; align-items:stretch; } }
   </style>
 </head>
 <body>
@@ -198,79 +44,60 @@
     <header class="topbar reveal">
       <a class="brand" href="index.html">
         <span class="mark">BB</span>
-        <span>
-          <strong>Bhargav Battula</strong>
-          <span>Contact hub</span>
-        </span>
+        <span><strong>Bhargav Battula</strong><br><span style="color:var(--muted);font-size:.92rem;">Contact hub</span></span>
       </a>
-      <div class="link-row">
-        <a class="ghost" href="index.html"><i class="fa-solid fa-arrow-left"></i>Back to portfolio</a>
-        <a class="cta" href="mailto:battulabhargav222@gmail.com"><i class="fa-solid fa-paper-plane"></i>Email now</a>
+      <div class="top-actions">
+        <button class="mode-toggle" type="button" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
       </div>
     </header>
-
     <section class="hero reveal">
-      <div class="eyebrow"><i class="fa-solid fa-address-book"></i> Contact</div>
-      <h1>Direct and simple ways to reach me.</h1>
-      <p>Use whichever channel fits the context. For role discussions and portfolio conversations, email is the cleanest path.</p>
+      <div class="kicker">Direct Reach</div>
+      <h1>Contact</h1>
     </section>
-
     <section class="grid">
-      <article class="panel reveal">
-        <h2>Primary channels</h2>
-        <div class="stack">
-          <a class="card" href="mailto:25cse2006@nitgoa.ac.in">
-            <span>Academic email</span>
-            <h3>25cse2006@nitgoa.ac.in</h3>
-            <p>For academic communication and formal outreach.</p>
-          </a>
-          <a class="card" href="mailto:battulabhargav222@gmail.com">
-            <span>Personal email</span>
-            <h3>battulabhargav222@gmail.com</h3>
-            <p>For portfolio feedback, collaboration, and software opportunities.</p>
-          </a>
-          <a class="card" href="tel:+917286066067">
-            <span>Phone</span>
-            <h3>+91 7286066067</h3>
-            <p>Best for quick coordination after initial contact.</p>
-          </a>
+      <article class="block reveal">
+        <div class="kicker">Primary Channels</div>
+        <h2>Reach Out</h2>
+        <div class="line-list">
+          <a class="line-item" href="mailto:25cse2006@nitgoa.ac.in"><strong>Email</strong><p>25cse2006@nitgoa.ac.in</p></a>
+          <a class="line-item" href="tel:+917286066067"><strong>Phone</strong><p>+91 7286066067</p></a>
+          <div class="line-item"><strong>Availability</strong><p>Open to internships, project collaboration, and software roles.</p></div>
         </div>
       </article>
-
-      <aside class="panel reveal">
-        <h2>Profiles</h2>
-        <div class="stack">
-          <a class="card" href="https://github.com/ZaynVK" target="_blank" rel="noreferrer">
-            <span>GitHub</span>
-            <h3>github.com/ZaynVK</h3>
-            <p>Code repositories and project references.</p>
-          </a>
-          <a class="card" href="https://www.linkedin.com/in/b22in" target="_blank" rel="noreferrer">
-            <span>LinkedIn</span>
-            <h3>linkedin.com/in/b22in</h3>
-            <p>Professional profile and role-focused presence.</p>
-          </a>
-          <div class="card">
-            <span>Availability</span>
-            <h3>Open to internships and software roles</h3>
-            <p>I am available for project collaboration, internships, and engineering opportunities.</p>
-          </div>
+      <aside class="block reveal">
+        <div class="kicker">Profiles</div>
+        <h2>Links</h2>
+        <div class="line-list">
+          <a class="line-item" href="https://www.linkedin.com/in/b22in" target="_blank" rel="noreferrer"><strong>LinkedIn</strong><p>linkedin.com/in/b22in</p></a>
+          <a class="line-item" href="https://github.com/ZaynVK" target="_blank" rel="noreferrer"><strong>GitHub</strong><p>github.com/ZaynVK</p></a>
         </div>
       </aside>
     </section>
   </div>
-
   <script>
+    const body = document.body;
+    const toggle = document.querySelector(".mode-toggle");
+    const icon = toggle.querySelector("i");
+    const applyTheme = (theme) => {
+      const isDark = theme === "dark";
+      body.classList.toggle("dark-mode", isDark);
+      icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    };
+    applyTheme(localStorage.getItem("portfolio-theme") === "dark" ? "dark" : "light");
+    toggle.addEventListener("click", () => {
+      const next = body.classList.contains("dark-mode") ? "light" : "dark";
+      localStorage.setItem("portfolio-theme", next);
+      applyTheme(next);
+    });
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+          entry.target.classList.add("active");
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
+    }, { threshold:.15 });
+    document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
   </script>
 </body>
 </html>
